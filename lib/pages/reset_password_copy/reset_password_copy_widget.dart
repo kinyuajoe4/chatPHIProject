@@ -42,67 +42,75 @@ class _ResetPasswordCopyWidgetState extends State<ResetPasswordCopyWidget> {
       },
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Colors.white,
         body: SafeArea(
           top: true,
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Padding(
-                padding:
-                    const EdgeInsetsDirectional.fromSTEB(163.0, 254.0, 164.0, 0.0),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8.0),
-                  child: Image.asset(
-                    'assets/images/Vector.png',
-                    width: 66.0,
-                    height: 66.0,
-                    fit: BoxFit.contain,
+          child: Container(
+            width: 393.0,
+            height: 900.0,
+            decoration: const BoxDecoration(
+              color: Colors.white,
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Padding(
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(163.0, 254.0, 164.0, 0.0),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8.0),
+                    child: Image.asset(
+                      'assets/images/Vector.png',
+                      width: 66.0,
+                      height: 66.0,
+                      fit: BoxFit.contain,
+                    ),
                   ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
-                child: Text(
-                  'Password has been set successfully',
-                  textAlign: TextAlign.center,
-                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Plus Jakarta Sans',
-                        fontSize: 23.0,
-                        letterSpacing: 0.0,
-                        fontWeight: FontWeight.w600,
-                      ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(23.0, 30.0, 16.0, 0.0),
-                child: FFButtonWidget(
-                  onPressed: () async {
-                    context.pushNamed('home');
-                  },
-                  text: 'Continue',
-                  options: FFButtonOptions(
-                    width: 350.0,
-                    height: 47.0,
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                    iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).primaryText,
-                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                  child: Text(
+                    'Password has been set successfully',
+                    textAlign: TextAlign.center,
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Plus Jakarta Sans',
-                          color: Colors.white,
-                          fontSize: 14.0,
+                          fontSize: 23.0,
                           letterSpacing: 0.0,
-                          fontWeight: FontWeight.normal,
+                          fontWeight: FontWeight.w600,
                         ),
-                    elevation: 0.0,
-                    borderRadius: BorderRadius.circular(10.0),
                   ),
                 ),
-              ),
-            ],
+                Padding(
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(23.0, 30.0, 16.0, 0.0),
+                  child: FFButtonWidget(
+                    onPressed: () async {
+                      context.pushNamed('home');
+                    },
+                    text: 'Continue',
+                    options: FFButtonOptions(
+                      width: 350.0,
+                      height: 47.0,
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                      iconPadding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      color: FlutterFlowTheme.of(context).primaryText,
+                      textStyle:
+                          FlutterFlowTheme.of(context).titleSmall.override(
+                                fontFamily: 'Plus Jakarta Sans',
+                                color: Colors.white,
+                                fontSize: 14.0,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.normal,
+                              ),
+                      elevation: 0.0,
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

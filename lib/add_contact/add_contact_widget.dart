@@ -56,534 +56,552 @@ class _AddContactWidgetState extends State<AddContactWidget> {
       },
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-        appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(67.0),
-          child: AppBar(
-            backgroundColor: FlutterFlowTheme.of(context).primaryText,
-            automaticallyImplyLeading: false,
-            leading: Row(
+        body: SafeArea(
+          top: true,
+          child: Container(
+            width: 393.0,
+            height: 900.0,
+            decoration: const BoxDecoration(
+              color: Colors.white,
+            ),
+            child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
-                Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(33.0, 0.0, 0.0, 0.0),
-                  child: InkWell(
-                    splashColor: Colors.transparent,
-                    focusColor: Colors.transparent,
-                    hoverColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
-                    onTap: () async {
-                      context.safePop();
-                    },
-                    child: Icon(
-                      Icons.chevron_left_sharp,
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                      size: 24.0,
+                Container(
+                  width: 393.0,
+                  height: 67.0,
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.of(context).primaryText,
+                    border: Border.all(
+                      color: FlutterFlowTheme.of(context).primaryText,
                     ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
-                  child: Column(
+                  child: Row(
                     mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        'Add contacts',
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Plus Jakarta Sans',
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              fontSize: 20.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.bold,
+                      Padding(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            33.0, 19.0, 0.0, 0.0),
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context.safePop();
+                          },
+                          child: Icon(
+                            Icons.chevron_left_sharp,
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            size: 24.0,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            10.0, 17.0, 0.0, 0.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Contacts info',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Plus Jakarta Sans',
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                    fontSize: 20.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                             ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
                 ),
+                Padding(
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(20.0, 33.0, 20.0, 0.0),
+                  child: SizedBox(
+                    width: 350.0,
+                    child: TextFormField(
+                      controller: _model.textController1,
+                      focusNode: _model.textFieldFocusNode1,
+                      autofocus: false,
+                      obscureText: false,
+                      decoration: InputDecoration(
+                        isDense: true,
+                        labelStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: 'Plus Jakarta Sans',
+                                  fontSize: 15.0,
+                                  letterSpacing: 0.0,
+                                ),
+                        hintText: 'Search by username',
+                        hintStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: 'Plus Jakarta Sans',
+                                  fontSize: 15.0,
+                                  letterSpacing: 0.0,
+                                ),
+                        enabledBorder: const OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color(0x00000000),
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(10.0),
+                            bottomRight: Radius.circular(10.0),
+                            topLeft: Radius.circular(10.0),
+                            topRight: Radius.circular(10.0),
+                          ),
+                        ),
+                        focusedBorder: const OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color(0x00000000),
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(10.0),
+                            bottomRight: Radius.circular(10.0),
+                            topLeft: Radius.circular(10.0),
+                            topRight: Radius.circular(10.0),
+                          ),
+                        ),
+                        errorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).error,
+                            width: 1.0,
+                          ),
+                          borderRadius: const BorderRadius.only(
+                            bottomLeft: Radius.circular(10.0),
+                            bottomRight: Radius.circular(10.0),
+                            topLeft: Radius.circular(10.0),
+                            topRight: Radius.circular(10.0),
+                          ),
+                        ),
+                        focusedErrorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).error,
+                            width: 1.0,
+                          ),
+                          borderRadius: const BorderRadius.only(
+                            bottomLeft: Radius.circular(10.0),
+                            bottomRight: Radius.circular(10.0),
+                            topLeft: Radius.circular(10.0),
+                            topRight: Radius.circular(10.0),
+                          ),
+                        ),
+                        filled: true,
+                        fillColor: const Color(0xFFF8F8F8),
+                      ),
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Plus Jakarta Sans',
+                            color: FlutterFlowTheme.of(context).secondaryText,
+                            fontSize: 15.0,
+                            letterSpacing: 0.0,
+                          ),
+                      maxLines: null,
+                      keyboardType: TextInputType.emailAddress,
+                      cursorColor: FlutterFlowTheme.of(context).primaryText,
+                      validator:
+                          _model.textController1Validator.asValidator(context),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 10.0),
+                  child: SizedBox(
+                    width: 350.0,
+                    child: TextFormField(
+                      controller: _model.textController2,
+                      focusNode: _model.textFieldFocusNode2,
+                      autofocus: false,
+                      obscureText: false,
+                      decoration: InputDecoration(
+                        isDense: true,
+                        labelStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: 'Plus Jakarta Sans',
+                                  fontSize: 15.0,
+                                  letterSpacing: 0.0,
+                                ),
+                        hintText: 'Search by phone number',
+                        hintStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: 'Plus Jakarta Sans',
+                                  fontSize: 15.0,
+                                  letterSpacing: 0.0,
+                                ),
+                        enabledBorder: const OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color(0x00000000),
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(10.0),
+                            bottomRight: Radius.circular(10.0),
+                            topLeft: Radius.circular(10.0),
+                            topRight: Radius.circular(10.0),
+                          ),
+                        ),
+                        focusedBorder: const OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color(0x00000000),
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(10.0),
+                            bottomRight: Radius.circular(10.0),
+                            topLeft: Radius.circular(10.0),
+                            topRight: Radius.circular(10.0),
+                          ),
+                        ),
+                        errorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).error,
+                            width: 1.0,
+                          ),
+                          borderRadius: const BorderRadius.only(
+                            bottomLeft: Radius.circular(10.0),
+                            bottomRight: Radius.circular(10.0),
+                            topLeft: Radius.circular(10.0),
+                            topRight: Radius.circular(10.0),
+                          ),
+                        ),
+                        focusedErrorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).error,
+                            width: 1.0,
+                          ),
+                          borderRadius: const BorderRadius.only(
+                            bottomLeft: Radius.circular(10.0),
+                            bottomRight: Radius.circular(10.0),
+                            topLeft: Radius.circular(10.0),
+                            topRight: Radius.circular(10.0),
+                          ),
+                        ),
+                        filled: true,
+                        fillColor: const Color(0xFFF8F8F8),
+                      ),
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Plus Jakarta Sans',
+                            color: FlutterFlowTheme.of(context).secondaryText,
+                            fontSize: 15.0,
+                            letterSpacing: 0.0,
+                          ),
+                      maxLines: null,
+                      keyboardType: TextInputType.emailAddress,
+                      cursorColor: FlutterFlowTheme.of(context).primaryText,
+                      validator:
+                          _model.textController2Validator.asValidator(context),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 10.0),
+                  child: SizedBox(
+                    width: 350.0,
+                    child: TextFormField(
+                      controller: _model.textController3,
+                      focusNode: _model.textFieldFocusNode3,
+                      autofocus: false,
+                      obscureText: false,
+                      decoration: InputDecoration(
+                        isDense: true,
+                        labelStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: 'Plus Jakarta Sans',
+                                  fontSize: 15.0,
+                                  letterSpacing: 0.0,
+                                ),
+                        hintText: 'Search by Email',
+                        hintStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: 'Plus Jakarta Sans',
+                                  fontSize: 15.0,
+                                  letterSpacing: 0.0,
+                                ),
+                        enabledBorder: const OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color(0x00000000),
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(10.0),
+                            bottomRight: Radius.circular(10.0),
+                            topLeft: Radius.circular(10.0),
+                            topRight: Radius.circular(10.0),
+                          ),
+                        ),
+                        focusedBorder: const OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color(0x00000000),
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(10.0),
+                            bottomRight: Radius.circular(10.0),
+                            topLeft: Radius.circular(10.0),
+                            topRight: Radius.circular(10.0),
+                          ),
+                        ),
+                        errorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).error,
+                            width: 1.0,
+                          ),
+                          borderRadius: const BorderRadius.only(
+                            bottomLeft: Radius.circular(10.0),
+                            bottomRight: Radius.circular(10.0),
+                            topLeft: Radius.circular(10.0),
+                            topRight: Radius.circular(10.0),
+                          ),
+                        ),
+                        focusedErrorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).error,
+                            width: 1.0,
+                          ),
+                          borderRadius: const BorderRadius.only(
+                            bottomLeft: Radius.circular(10.0),
+                            bottomRight: Radius.circular(10.0),
+                            topLeft: Radius.circular(10.0),
+                            topRight: Radius.circular(10.0),
+                          ),
+                        ),
+                        filled: true,
+                        fillColor: const Color(0xFFF8F8F8),
+                      ),
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Plus Jakarta Sans',
+                            color: FlutterFlowTheme.of(context).secondaryText,
+                            fontSize: 15.0,
+                            letterSpacing: 0.0,
+                          ),
+                      maxLines: null,
+                      keyboardType: TextInputType.emailAddress,
+                      cursorColor: FlutterFlowTheme.of(context).primaryText,
+                      validator:
+                          _model.textController3Validator.asValidator(context),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 10.0),
+                  child: SizedBox(
+                    width: 350.0,
+                    child: TextFormField(
+                      controller: _model.textController4,
+                      focusNode: _model.textFieldFocusNode4,
+                      autofocus: false,
+                      obscureText: false,
+                      decoration: InputDecoration(
+                        isDense: true,
+                        labelStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: 'Plus Jakarta Sans',
+                                  fontSize: 15.0,
+                                  letterSpacing: 0.0,
+                                ),
+                        hintText: 'Search by credential',
+                        hintStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: 'Plus Jakarta Sans',
+                                  fontSize: 15.0,
+                                  letterSpacing: 0.0,
+                                ),
+                        enabledBorder: const OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color(0x00000000),
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(10.0),
+                            bottomRight: Radius.circular(10.0),
+                            topLeft: Radius.circular(10.0),
+                            topRight: Radius.circular(10.0),
+                          ),
+                        ),
+                        focusedBorder: const OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color(0x00000000),
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(10.0),
+                            bottomRight: Radius.circular(10.0),
+                            topLeft: Radius.circular(10.0),
+                            topRight: Radius.circular(10.0),
+                          ),
+                        ),
+                        errorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).error,
+                            width: 1.0,
+                          ),
+                          borderRadius: const BorderRadius.only(
+                            bottomLeft: Radius.circular(10.0),
+                            bottomRight: Radius.circular(10.0),
+                            topLeft: Radius.circular(10.0),
+                            topRight: Radius.circular(10.0),
+                          ),
+                        ),
+                        focusedErrorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).error,
+                            width: 1.0,
+                          ),
+                          borderRadius: const BorderRadius.only(
+                            bottomLeft: Radius.circular(10.0),
+                            bottomRight: Radius.circular(10.0),
+                            topLeft: Radius.circular(10.0),
+                            topRight: Radius.circular(10.0),
+                          ),
+                        ),
+                        filled: true,
+                        fillColor: const Color(0xFFF8F8F8),
+                      ),
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Plus Jakarta Sans',
+                            color: FlutterFlowTheme.of(context).secondaryText,
+                            fontSize: 15.0,
+                            letterSpacing: 0.0,
+                          ),
+                      maxLines: null,
+                      keyboardType: TextInputType.emailAddress,
+                      cursorColor: FlutterFlowTheme.of(context).primaryText,
+                      validator:
+                          _model.textController4Validator.asValidator(context),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 10.0),
+                  child: SizedBox(
+                    width: 350.0,
+                    child: TextFormField(
+                      controller: _model.textController5,
+                      focusNode: _model.textFieldFocusNode5,
+                      autofocus: false,
+                      obscureText: false,
+                      decoration: InputDecoration(
+                        isDense: true,
+                        labelStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: 'Plus Jakarta Sans',
+                                  fontSize: 15.0,
+                                  letterSpacing: 0.0,
+                                ),
+                        hintText: 'Search by Zip',
+                        hintStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: 'Plus Jakarta Sans',
+                                  fontSize: 15.0,
+                                  letterSpacing: 0.0,
+                                ),
+                        enabledBorder: const OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color(0x00000000),
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(10.0),
+                            bottomRight: Radius.circular(10.0),
+                            topLeft: Radius.circular(10.0),
+                            topRight: Radius.circular(10.0),
+                          ),
+                        ),
+                        focusedBorder: const OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color(0x00000000),
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(10.0),
+                            bottomRight: Radius.circular(10.0),
+                            topLeft: Radius.circular(10.0),
+                            topRight: Radius.circular(10.0),
+                          ),
+                        ),
+                        errorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).error,
+                            width: 1.0,
+                          ),
+                          borderRadius: const BorderRadius.only(
+                            bottomLeft: Radius.circular(10.0),
+                            bottomRight: Radius.circular(10.0),
+                            topLeft: Radius.circular(10.0),
+                            topRight: Radius.circular(10.0),
+                          ),
+                        ),
+                        focusedErrorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).error,
+                            width: 1.0,
+                          ),
+                          borderRadius: const BorderRadius.only(
+                            bottomLeft: Radius.circular(10.0),
+                            bottomRight: Radius.circular(10.0),
+                            topLeft: Radius.circular(10.0),
+                            topRight: Radius.circular(10.0),
+                          ),
+                        ),
+                        filled: true,
+                        fillColor: const Color(0xFFF8F8F8),
+                      ),
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Plus Jakarta Sans',
+                            color: FlutterFlowTheme.of(context).secondaryText,
+                            fontSize: 15.0,
+                            letterSpacing: 0.0,
+                          ),
+                      maxLines: null,
+                      keyboardType: TextInputType.emailAddress,
+                      cursorColor: FlutterFlowTheme.of(context).primaryText,
+                      validator:
+                          _model.textController5Validator.asValidator(context),
+                    ),
+                  ),
+                ),
+                FFButtonWidget(
+                  onPressed: () {
+                    print('Button pressed ...');
+                  },
+                  text: 'Search',
+                  options: FFButtonOptions(
+                    width: 278.0,
+                    height: 47.0,
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                    iconPadding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    color: FlutterFlowTheme.of(context).primaryText,
+                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                          fontFamily: 'Plus Jakarta Sans',
+                          color: Colors.white,
+                          fontSize: 14.0,
+                          letterSpacing: 0.0,
+                          fontWeight: FontWeight.normal,
+                        ),
+                    elevation: 0.0,
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                ),
               ],
             ),
-            actions: const [],
-            centerTitle: false,
-            elevation: 2.0,
-          ),
-        ),
-        body: SafeArea(
-          top: true,
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(20.0, 33.0, 20.0, 0.0),
-                child: SizedBox(
-                  width: 350.0,
-                  child: TextFormField(
-                    controller: _model.textController1,
-                    focusNode: _model.textFieldFocusNode1,
-                    autofocus: false,
-                    obscureText: false,
-                    decoration: InputDecoration(
-                      isDense: true,
-                      labelStyle:
-                          FlutterFlowTheme.of(context).labelMedium.override(
-                                fontFamily: 'Plus Jakarta Sans',
-                                fontSize: 15.0,
-                                letterSpacing: 0.0,
-                              ),
-                      hintText: 'Search by username',
-                      hintStyle:
-                          FlutterFlowTheme.of(context).labelMedium.override(
-                                fontFamily: 'Plus Jakarta Sans',
-                                fontSize: 15.0,
-                                letterSpacing: 0.0,
-                              ),
-                      enabledBorder: const OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Color(0x00000000),
-                          width: 1.0,
-                        ),
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(10.0),
-                          bottomRight: Radius.circular(10.0),
-                          topLeft: Radius.circular(10.0),
-                          topRight: Radius.circular(10.0),
-                        ),
-                      ),
-                      focusedBorder: const OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Color(0x00000000),
-                          width: 1.0,
-                        ),
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(10.0),
-                          bottomRight: Radius.circular(10.0),
-                          topLeft: Radius.circular(10.0),
-                          topRight: Radius.circular(10.0),
-                        ),
-                      ),
-                      errorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).error,
-                          width: 1.0,
-                        ),
-                        borderRadius: const BorderRadius.only(
-                          bottomLeft: Radius.circular(10.0),
-                          bottomRight: Radius.circular(10.0),
-                          topLeft: Radius.circular(10.0),
-                          topRight: Radius.circular(10.0),
-                        ),
-                      ),
-                      focusedErrorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).error,
-                          width: 1.0,
-                        ),
-                        borderRadius: const BorderRadius.only(
-                          bottomLeft: Radius.circular(10.0),
-                          bottomRight: Radius.circular(10.0),
-                          topLeft: Radius.circular(10.0),
-                          topRight: Radius.circular(10.0),
-                        ),
-                      ),
-                      filled: true,
-                      fillColor: const Color(0xFFF8F8F8),
-                    ),
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Plus Jakarta Sans',
-                          color: FlutterFlowTheme.of(context).secondaryText,
-                          fontSize: 15.0,
-                          letterSpacing: 0.0,
-                        ),
-                    maxLines: null,
-                    keyboardType: TextInputType.emailAddress,
-                    cursorColor: FlutterFlowTheme.of(context).primaryText,
-                    validator:
-                        _model.textController1Validator.asValidator(context),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 10.0),
-                child: SizedBox(
-                  width: 350.0,
-                  child: TextFormField(
-                    controller: _model.textController2,
-                    focusNode: _model.textFieldFocusNode2,
-                    autofocus: false,
-                    obscureText: false,
-                    decoration: InputDecoration(
-                      isDense: true,
-                      labelStyle:
-                          FlutterFlowTheme.of(context).labelMedium.override(
-                                fontFamily: 'Plus Jakarta Sans',
-                                fontSize: 15.0,
-                                letterSpacing: 0.0,
-                              ),
-                      hintText: 'Search by phone number',
-                      hintStyle:
-                          FlutterFlowTheme.of(context).labelMedium.override(
-                                fontFamily: 'Plus Jakarta Sans',
-                                fontSize: 15.0,
-                                letterSpacing: 0.0,
-                              ),
-                      enabledBorder: const OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Color(0x00000000),
-                          width: 1.0,
-                        ),
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(10.0),
-                          bottomRight: Radius.circular(10.0),
-                          topLeft: Radius.circular(10.0),
-                          topRight: Radius.circular(10.0),
-                        ),
-                      ),
-                      focusedBorder: const OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Color(0x00000000),
-                          width: 1.0,
-                        ),
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(10.0),
-                          bottomRight: Radius.circular(10.0),
-                          topLeft: Radius.circular(10.0),
-                          topRight: Radius.circular(10.0),
-                        ),
-                      ),
-                      errorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).error,
-                          width: 1.0,
-                        ),
-                        borderRadius: const BorderRadius.only(
-                          bottomLeft: Radius.circular(10.0),
-                          bottomRight: Radius.circular(10.0),
-                          topLeft: Radius.circular(10.0),
-                          topRight: Radius.circular(10.0),
-                        ),
-                      ),
-                      focusedErrorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).error,
-                          width: 1.0,
-                        ),
-                        borderRadius: const BorderRadius.only(
-                          bottomLeft: Radius.circular(10.0),
-                          bottomRight: Radius.circular(10.0),
-                          topLeft: Radius.circular(10.0),
-                          topRight: Radius.circular(10.0),
-                        ),
-                      ),
-                      filled: true,
-                      fillColor: const Color(0xFFF8F8F8),
-                    ),
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Plus Jakarta Sans',
-                          color: FlutterFlowTheme.of(context).secondaryText,
-                          fontSize: 15.0,
-                          letterSpacing: 0.0,
-                        ),
-                    maxLines: null,
-                    keyboardType: TextInputType.emailAddress,
-                    cursorColor: FlutterFlowTheme.of(context).primaryText,
-                    validator:
-                        _model.textController2Validator.asValidator(context),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 10.0),
-                child: SizedBox(
-                  width: 350.0,
-                  child: TextFormField(
-                    controller: _model.textController3,
-                    focusNode: _model.textFieldFocusNode3,
-                    autofocus: false,
-                    obscureText: false,
-                    decoration: InputDecoration(
-                      isDense: true,
-                      labelStyle:
-                          FlutterFlowTheme.of(context).labelMedium.override(
-                                fontFamily: 'Plus Jakarta Sans',
-                                fontSize: 15.0,
-                                letterSpacing: 0.0,
-                              ),
-                      hintText: 'Search by Email',
-                      hintStyle:
-                          FlutterFlowTheme.of(context).labelMedium.override(
-                                fontFamily: 'Plus Jakarta Sans',
-                                fontSize: 15.0,
-                                letterSpacing: 0.0,
-                              ),
-                      enabledBorder: const OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Color(0x00000000),
-                          width: 1.0,
-                        ),
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(10.0),
-                          bottomRight: Radius.circular(10.0),
-                          topLeft: Radius.circular(10.0),
-                          topRight: Radius.circular(10.0),
-                        ),
-                      ),
-                      focusedBorder: const OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Color(0x00000000),
-                          width: 1.0,
-                        ),
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(10.0),
-                          bottomRight: Radius.circular(10.0),
-                          topLeft: Radius.circular(10.0),
-                          topRight: Radius.circular(10.0),
-                        ),
-                      ),
-                      errorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).error,
-                          width: 1.0,
-                        ),
-                        borderRadius: const BorderRadius.only(
-                          bottomLeft: Radius.circular(10.0),
-                          bottomRight: Radius.circular(10.0),
-                          topLeft: Radius.circular(10.0),
-                          topRight: Radius.circular(10.0),
-                        ),
-                      ),
-                      focusedErrorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).error,
-                          width: 1.0,
-                        ),
-                        borderRadius: const BorderRadius.only(
-                          bottomLeft: Radius.circular(10.0),
-                          bottomRight: Radius.circular(10.0),
-                          topLeft: Radius.circular(10.0),
-                          topRight: Radius.circular(10.0),
-                        ),
-                      ),
-                      filled: true,
-                      fillColor: const Color(0xFFF8F8F8),
-                    ),
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Plus Jakarta Sans',
-                          color: FlutterFlowTheme.of(context).secondaryText,
-                          fontSize: 15.0,
-                          letterSpacing: 0.0,
-                        ),
-                    maxLines: null,
-                    keyboardType: TextInputType.emailAddress,
-                    cursorColor: FlutterFlowTheme.of(context).primaryText,
-                    validator:
-                        _model.textController3Validator.asValidator(context),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 10.0),
-                child: SizedBox(
-                  width: 350.0,
-                  child: TextFormField(
-                    controller: _model.textController4,
-                    focusNode: _model.textFieldFocusNode4,
-                    autofocus: false,
-                    obscureText: false,
-                    decoration: InputDecoration(
-                      isDense: true,
-                      labelStyle:
-                          FlutterFlowTheme.of(context).labelMedium.override(
-                                fontFamily: 'Plus Jakarta Sans',
-                                fontSize: 15.0,
-                                letterSpacing: 0.0,
-                              ),
-                      hintText: 'Search by credential',
-                      hintStyle:
-                          FlutterFlowTheme.of(context).labelMedium.override(
-                                fontFamily: 'Plus Jakarta Sans',
-                                fontSize: 15.0,
-                                letterSpacing: 0.0,
-                              ),
-                      enabledBorder: const OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Color(0x00000000),
-                          width: 1.0,
-                        ),
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(10.0),
-                          bottomRight: Radius.circular(10.0),
-                          topLeft: Radius.circular(10.0),
-                          topRight: Radius.circular(10.0),
-                        ),
-                      ),
-                      focusedBorder: const OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Color(0x00000000),
-                          width: 1.0,
-                        ),
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(10.0),
-                          bottomRight: Radius.circular(10.0),
-                          topLeft: Radius.circular(10.0),
-                          topRight: Radius.circular(10.0),
-                        ),
-                      ),
-                      errorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).error,
-                          width: 1.0,
-                        ),
-                        borderRadius: const BorderRadius.only(
-                          bottomLeft: Radius.circular(10.0),
-                          bottomRight: Radius.circular(10.0),
-                          topLeft: Radius.circular(10.0),
-                          topRight: Radius.circular(10.0),
-                        ),
-                      ),
-                      focusedErrorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).error,
-                          width: 1.0,
-                        ),
-                        borderRadius: const BorderRadius.only(
-                          bottomLeft: Radius.circular(10.0),
-                          bottomRight: Radius.circular(10.0),
-                          topLeft: Radius.circular(10.0),
-                          topRight: Radius.circular(10.0),
-                        ),
-                      ),
-                      filled: true,
-                      fillColor: const Color(0xFFF8F8F8),
-                    ),
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Plus Jakarta Sans',
-                          color: FlutterFlowTheme.of(context).secondaryText,
-                          fontSize: 15.0,
-                          letterSpacing: 0.0,
-                        ),
-                    maxLines: null,
-                    keyboardType: TextInputType.emailAddress,
-                    cursorColor: FlutterFlowTheme.of(context).primaryText,
-                    validator:
-                        _model.textController4Validator.asValidator(context),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 10.0),
-                child: SizedBox(
-                  width: 350.0,
-                  child: TextFormField(
-                    controller: _model.textController5,
-                    focusNode: _model.textFieldFocusNode5,
-                    autofocus: false,
-                    obscureText: false,
-                    decoration: InputDecoration(
-                      isDense: true,
-                      labelStyle:
-                          FlutterFlowTheme.of(context).labelMedium.override(
-                                fontFamily: 'Plus Jakarta Sans',
-                                fontSize: 15.0,
-                                letterSpacing: 0.0,
-                              ),
-                      hintText: 'Search by Zip',
-                      hintStyle:
-                          FlutterFlowTheme.of(context).labelMedium.override(
-                                fontFamily: 'Plus Jakarta Sans',
-                                fontSize: 15.0,
-                                letterSpacing: 0.0,
-                              ),
-                      enabledBorder: const OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Color(0x00000000),
-                          width: 1.0,
-                        ),
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(10.0),
-                          bottomRight: Radius.circular(10.0),
-                          topLeft: Radius.circular(10.0),
-                          topRight: Radius.circular(10.0),
-                        ),
-                      ),
-                      focusedBorder: const OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Color(0x00000000),
-                          width: 1.0,
-                        ),
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(10.0),
-                          bottomRight: Radius.circular(10.0),
-                          topLeft: Radius.circular(10.0),
-                          topRight: Radius.circular(10.0),
-                        ),
-                      ),
-                      errorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).error,
-                          width: 1.0,
-                        ),
-                        borderRadius: const BorderRadius.only(
-                          bottomLeft: Radius.circular(10.0),
-                          bottomRight: Radius.circular(10.0),
-                          topLeft: Radius.circular(10.0),
-                          topRight: Radius.circular(10.0),
-                        ),
-                      ),
-                      focusedErrorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).error,
-                          width: 1.0,
-                        ),
-                        borderRadius: const BorderRadius.only(
-                          bottomLeft: Radius.circular(10.0),
-                          bottomRight: Radius.circular(10.0),
-                          topLeft: Radius.circular(10.0),
-                          topRight: Radius.circular(10.0),
-                        ),
-                      ),
-                      filled: true,
-                      fillColor: const Color(0xFFF8F8F8),
-                    ),
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Plus Jakarta Sans',
-                          color: FlutterFlowTheme.of(context).secondaryText,
-                          fontSize: 15.0,
-                          letterSpacing: 0.0,
-                        ),
-                    maxLines: null,
-                    keyboardType: TextInputType.emailAddress,
-                    cursorColor: FlutterFlowTheme.of(context).primaryText,
-                    validator:
-                        _model.textController5Validator.asValidator(context),
-                  ),
-                ),
-              ),
-              FFButtonWidget(
-                onPressed: () {
-                  print('Button pressed ...');
-                },
-                text: 'Search',
-                options: FFButtonOptions(
-                  width: 278.0,
-                  height: 47.0,
-                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                  iconPadding:
-                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: FlutterFlowTheme.of(context).primaryText,
-                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily: 'Plus Jakarta Sans',
-                        color: Colors.white,
-                        fontSize: 14.0,
-                        letterSpacing: 0.0,
-                        fontWeight: FontWeight.normal,
-                      ),
-                  elevation: 0.0,
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-              ),
-            ],
           ),
         ),
       ),

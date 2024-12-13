@@ -41,10 +41,11 @@ class _ContactInfoWidgetState extends State<ContactInfoWidget> {
       },
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryText,
         body: SafeArea(
           top: true,
           child: Container(
+            width: 393.0,
+            height: 900.0,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
             ),
@@ -54,7 +55,7 @@ class _ContactInfoWidgetState extends State<ContactInfoWidget> {
                 Stack(
                   children: [
                     Container(
-                      width: 390.0,
+                      width: 393.0,
                       height: 170.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).primaryText,
