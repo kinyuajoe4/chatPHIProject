@@ -1,6 +1,8 @@
 # chatPHIProject
+#Mobile preview of the app
+https://hatphi-project-j0q3yn.flutterflow.app/
 
-A new Flutter project.
+
 
 ## Getting Started
 
